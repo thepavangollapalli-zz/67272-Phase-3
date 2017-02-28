@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation.min
+//= require foundation
 //= require_tree .
 
 $(function() {
   $(document).foundation('topbar', 'reflow');
 });
+
+$(function(){ $(document).foundation(); });
