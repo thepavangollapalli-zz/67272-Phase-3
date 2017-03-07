@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :items
+  resources :item_prices
+  resources :purchases
+  resources :purchases
   # Routes for main resources
   resources :items
   resources :purchases
