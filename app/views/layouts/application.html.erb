@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>YOUR TITLE GOES HERE</title>
+    <title>AM Chess Store - <%= controller.controller_name.capitalize %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,8 +13,9 @@
   </head>
 
   <body>
-
+    <%= render 'partials/nav' %>
     <%= yield %>
 
+    <%= render 'partials/footer' %>
   </body>
 </html>
