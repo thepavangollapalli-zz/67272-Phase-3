@@ -22,6 +22,12 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
+    @category_list = {
+      "Pieces" => "pieces", 
+      "Boards" => "boards",
+      "Clocks" => "clocks",
+      "Supplies" => "supplies"
+    }
     @item = Item.new
   end
 
