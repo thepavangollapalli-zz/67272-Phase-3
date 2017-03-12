@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @clocks = Item.for_category("clocks").active
     @supplies = Item.for_category("supplies").active
     @inactive_items = Item.inactive
-    @items = Item.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+    @items = Item.active.alphabetical.all #paginate(:page => params[:page]).per_page(10)
   end
 
   # GET /items/1
