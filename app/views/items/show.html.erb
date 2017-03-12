@@ -1,4 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @item.name %></h2>
+<h4>Price:
+
+	<% if @item.current_price.nil? %>
+		N/A
+	<% else %>
+		<%= number_to_currency(@item.current_price) %>
+	<% end %>			
+</h4>
+<p>Description: <%= @item.description %></p>
+<p>Inventory Level: <%= @item.inventory_level %></p>
+<p>Reorder Level: <%= @item.reorder_level %></p>
+<p>Color: <%= @item.color %></p>
+<% unless @price_history.empty? %>
+	<h4>Price History</h4>
+	<% @price_history.each do |ph| %>
+		<p><%= ph.start_date %> <%= ph.end_date %>
+		<p><%= number_to_currency(ph.price) %></p>
+	<% end %>
+<% end %>
+<h4>Similar Items</h4>
+<% @similar_items.each do |i| %>
+	<p><%= link_to "#{i.name}", item_path(i) %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
