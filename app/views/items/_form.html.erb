@@ -1,7 +1,16 @@
-<%= simple_form_for(@item) do |f| %>
+<%= simple_form_for(@item, html: {class: 'form_horizontal' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  	<%= f.input :name %>
+  	<%= f.input :description %>
+  	<%= f.input :category, collection: @category_list %>
+  	<%= f.input :color %>
+  	<%= f.input :weight %>
+  	<% unless action_name == "edit" %>
+  		<%= f.input :inventory_level %>
+  	<% end %>
+  	<%= f.input :reorder_level %>
   </div>
 
   <div class="form-actions">
