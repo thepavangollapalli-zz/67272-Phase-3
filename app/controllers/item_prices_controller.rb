@@ -20,8 +20,6 @@ class ItemPricesController < ApplicationController
 
   # GET /item_prices/1/edit
   def edit
-
-    @active_items = Item.active.all.name
   end
 
   # POST /item_prices
