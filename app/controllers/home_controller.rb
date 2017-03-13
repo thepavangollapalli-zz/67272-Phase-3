@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 	def home
-		@items_to_reorder = Item.need_reorder.to_a
+		@items_to_reorder = Item.need_reorder.all
 	end
 
 	def about
