@@ -5,7 +5,7 @@ class ItemPricesController < ApplicationController
   # GET /item_prices.json
   def index
     @active_items = Item.active
-    @item_prices = ItemPrice.chronological.paginate(page: params[:page]).per_page(10)
+    @item_prices = ItemPrice.chronological.all #paginate(page: params[:page]).per_page(10)
   end
 
   # GET /item_prices/1
@@ -20,12 +20,15 @@ class ItemPricesController < ApplicationController
 
   # GET /item_prices/1/edit
   def edit
+
+    @active_items = Item.active.all.name
   end
 
   # POST /item_prices
   # POST /item_prices.json
   def create
     @item_price = ItemPrice.new(item_price_params)
+    @item_price.start_date = Date.current
     if @item_price.save
         @item = @item_price.item
         flash[:notice] = "Changed the price of #{@item.name}."
@@ -52,6 +55,6 @@ class ItemPricesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_price_params
-      params.require(:item_price).permit(:item_id, :price, :start_date)
+      params.require(:item_price).permit(:item_id, :price)
     end
 end
