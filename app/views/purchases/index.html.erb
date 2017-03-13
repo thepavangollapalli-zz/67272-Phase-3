@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Purchases</h1>
+<h1>Recent Purchases</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +15,9 @@
   <tbody>
     <% @purchases.each do |purchase| %>
       <tr>
+        <td><%= link_to "#{purchase.item.name}", item_path(purchase.item) %>
+        <td><%= purchase.quantity %></td>
+        <td><%= purchase.date.strftime("%m/%d/%y") %></td>
         <td><%= link_to 'Show', purchase %></td>
         <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
         <td><%= link_to 'Destroy', purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
