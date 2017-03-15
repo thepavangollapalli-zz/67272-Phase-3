@@ -2,6 +2,13 @@
 	<p id="notice"><%= notice %></p>
 
 	<h2><%= @item.name %></h2>
+	<h5>Price:
+		<% if @item.current_price.nil? %>
+			N/A
+		<% else %>
+			<%= number_to_currency(@item.current_price) %>
+		<% end %>
+	</h5>
 	<h5><%= link_to 'Back', items_path %></h5>
 
 	<div class="row">
@@ -18,17 +25,11 @@
               	<%= image_tag("clocks.jpg", :alt => "clocks") %>
               <% end %>
               <span class="card-title">
-              	<h5>Price:
-
-				<% if @item.current_price.nil? %>
-					N/A
-				<% else %>
-					<%= number_to_currency(@item.current_price) %>
-				<% end %></h5>
+              	
               </span>
             </div>
             <div class="card-content" style="border-top:1px solid rgba(160,160,160,0.2);">
-	            <p><%= @item.description %></p><br />
+	            <p><strong>Description: </strong><%= @item.description %></p><br />
 	            <p><strong>Color:</strong> <%= @item.color %></p><br />
 	            <p><strong>Inventory Level:</strong> <%= @item.inventory_level %></p><br />
 				<p><strong>Reorder Level:</strong> <%= @item.reorder_level %></p>
