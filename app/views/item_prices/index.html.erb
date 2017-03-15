@@ -8,7 +8,7 @@
     <h4>No prices present in database.</h4>
   <% else %>
     <h5><%= link_to 'New Item price', new_item_price_path %><h5>
-    <table>
+    <table class="highlight table_fix">
       <thead>
         <tr>
           <th>Item</th>
@@ -20,8 +20,8 @@
       <tbody>
         <% @item_prices.current.each do |item_price| %>
           <tr>
-            <td><%= link_to "#{item_price.item.name}", item_path(item_price.item) %></td>
-            <td><%= number_to_currency(item_price.price) %></td>
+            <td class="table_fix"><%= link_to "#{item_price.item.name}", item_path(item_price.item) %></td>
+            <td class="table_fix"><%= number_to_currency(item_price.price) %></td>
           </tr>
         <% end %>
       </tbody>

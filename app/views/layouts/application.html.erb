@@ -16,7 +16,10 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <style>
-      ul {
+      html{
+        height:100%;
+      }
+      .nav {
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -28,15 +31,15 @@
           width:100%;
       }
 
-      li {
+      .nav li {
           float: right;
       }
 
-      li:first-child{
+      .nav li:first-child{
         margin-right:3%;
       }
 
-      li a {
+      .nav li a {
           display: block;
           color: #666;
           text-align: center;
@@ -44,8 +47,13 @@
           text-decoration: none;
       }
 
-      li a:hover{
+      .nav li a:hover{
           background-color: #ddd;
+      }
+
+      ul:not(.nav) li{
+        margin-left:2%;
+        list-style-type:circle;
       }
 
       body{
@@ -57,6 +65,11 @@
       .display{
         margin-top:5%;
         flex: 1;
+      }
+
+      .table_fix{
+         width: 100%; 
+         font-size:14px;
       }
     </style>
   </head>
