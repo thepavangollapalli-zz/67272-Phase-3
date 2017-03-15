@@ -1,18 +1,24 @@
-<h2>Reorder List</h2>
-<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Inventory Level</th>
-			<th>Reorder Level</th>
-			<th colspan="3"></th>
-		</tr>
-	</thead>
-	<tbody>
-	<% @items_to_reorder.each do |item| %>
-		<td><%= link_to "#{item.name}", item %></td>
-		<td><%= item.inventory_level %></td>
-		<td><%= item.reorder_level %></td>
+<div class="container display">
+	<h2>Reorder List</h2>
+	<% if @items_to_reorder.empty? %>
+		<h4>No items need to be reordered!</h4>
+	<% else %>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Inventory Level</th>
+					<th>Reorder Level</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @items_to_reorder.each do |item| %>
+				<td><%= link_to "#{item.name}", item %></td>
+				<td><%= item.inventory_level %></td>
+				<td><%= item.reorder_level %></td>
+			<% end %>
+			</tbody>
+		</table>
 	<% end %>
-	</tbody>
-</table>
+</div>
