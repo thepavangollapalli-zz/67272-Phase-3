@@ -19,7 +19,7 @@
 
       <tbody>
         <% @item_prices.current.each do |item_price| %>
-          <tr>
+          <tr class="table_fix">
             <td class="table_fix"><%= link_to "#{item_price.item.name}", item_path(item_price.item) %></td>
             <td class="table_fix"><%= number_to_currency(item_price.price) %></td>
           </tr>
