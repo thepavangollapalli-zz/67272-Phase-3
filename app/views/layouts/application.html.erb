@@ -53,7 +53,7 @@
           background-color: #ddd;
       }
 
-      ul:not(.nav) li{
+      .private_info li{
         margin-left:2%;
         list-style-type:circle;
       }
@@ -73,6 +73,10 @@
          width: 100%; 
          font-size:14px;
       }
+
+/*      select{
+        display:block;
+      }*/
     </style>
   </head>
   <body>
@@ -83,7 +87,8 @@
     <%= render 'partials/footer' %>
     <script>
       $(document).ready(function(){
-        $('.collapsible').collapsible();
+        $('select').material_select();
       });
+    </script>
   </body>
 </html>
