@@ -7,11 +7,14 @@
     <title>AM Chess Store - <%= controller.controller_name.capitalize %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "styles.css" %>
+
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/styles.css">
 
     <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -21,20 +24,20 @@
         height:100%;
       }
       .nav {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          border: 1px solid #e7e7e7;
-          background-color: #f3f3f3;
-          position:fixed;
-          top:0;
-          width:100%;
-          z-index:1000;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;
+        position:fixed;
+        top:0;
+        width:100%;
+        z-index:1000;
       }
 
       .nav li {
-          float: right;
+        float: right;
       }
 
       .nav li:first-child{
@@ -42,15 +45,15 @@
       }
 
       .nav li a {
-          display: block;
-          color: #666;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
+        display: block;
+        color: #666;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
       }
 
       .nav li a:hover{
-          background-color: #ddd;
+        background-color: #ddd;
       }
 
       .private_info li{
@@ -70,13 +73,9 @@
       }
 
       .table_fix{
-         width: 100%; 
-         font-size:14px;
+        width: 100%; 
+        font-size:14px;
       }
-
-/*      select{
-        display:block;
-      }*/
     </style>
   </head>
   <body>
