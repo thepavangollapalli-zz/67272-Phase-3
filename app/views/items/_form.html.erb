@@ -2,18 +2,45 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<%= f.input :name %>
-  	<%= f.input :description %>
-  	<%= f.input :category, collection: @category_list %>
-  	<%= f.input :color %>
-  	<%= f.input :weight %>
-  	<% unless action_name == "edit" %>
-  		<%= f.input :inventory_level %>
-  	<% end %>
-  	<%= f.input :reorder_level %>
+    <div class="row">
+      <div class="input-field col s12">
+  	     <%= f.input :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+  	    <%= f.input :description, :input_html => { :class => 'materialize-textarea' } %>
+      </div>
+    </div>
+    <div class="row">
+      <!-- BUG: On incorrect form submission, it redirects to a controller without the collection. -->
+      <!-- I can put the collection into that controller as well, but i probably won't get 100% coverage. -->
+      <div class="input-field col s12">
+         <%= f.select(:category, Item::CATEGORIES, prompt: "Select a category") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6">
+    	  <%= f.input :color %>
+      </div>
+      <div class='input-field col s12 m6'>
+    	  <%= f.input :weight %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6">
+        <%= f.input :reorder_level %>
+      </div>
+      <div class="input-field col s12 m6">
+        <% unless action_name == "edit" %>
+          <%= f.input :inventory_level %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
