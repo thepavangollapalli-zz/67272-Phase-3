@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>AM Chess Store - <%= controller.controller_name.capitalize %></title>
-
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    "application" %>
     <%= stylesheet_link_tag "styles.css" %>
 
@@ -29,7 +29,7 @@
         padding: 0;
         overflow: hidden;
         border: 1px solid #e7e7e7;
-        background-color: #f3f3f3;
+        background-color: #f9fbfb;
         position:fixed;
         top:0;
         width:100%;
@@ -50,10 +50,13 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        transition: 0.3s ease-in-out;
       }
 
       .nav li a:hover{
-        background-color: #ddd;
+        background-color: #3a4a4d;
+        color: #f9fbfb;
+        transition: 0.3s ease-in-out;
       }
 
       .private_info li{
@@ -75,6 +78,10 @@
       .table_fix{
         width: 100%; 
         font-size:14px;
+      }
+
+      #show_item_edit{
+        color:#ff4430;
       }
     </style>
   </head>
